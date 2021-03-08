@@ -1,0 +1,4 @@
+#Ignorando a pasta compilados
+compilados/
+#Ignorando o compilador.sh
+*.sh
