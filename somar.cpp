@@ -7,6 +7,6 @@ int main(){
     cin >> numero1;
     cout << "informe o segundo numero:\n";
     cin >> numero2;
-    cout << "\n\nO resultado é: " << (numero1+numero2) << "\n";
-    return (numero1+numero2);
+    cout << "\n\nO resultado é: " << (numero1*numero2) << "\n";
+    return (numero1*numero2);
 }
