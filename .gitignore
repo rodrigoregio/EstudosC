@@ -1,5 +1,6 @@
-#Ignorando a pasta compilados
-compilados/
-#Ignorando o compilador.sh e arquivos .exe
+# pasta vscode
+.vscode/
+# arquivos sh
 *.sh
+# arquivos .exe
 *.exe
