@@ -16,8 +16,11 @@ int fat(int x){
     return res;
 }
 int main(){
-    cout << "Informe um numero:" << endl;
     int num=0;
-    cin >> num;
+    while(num<=1){
+        cout << "Informe um numero inteiro e positivo:" << endl;
+        cin >> num;
+    }
     cout << "O fatorial do numero é: " << fat(num) << endl;
+    return 0;
 }

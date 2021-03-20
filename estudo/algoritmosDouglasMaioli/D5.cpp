@@ -20,7 +20,7 @@ int main(){
     cin >> renda;
 
     cout << "Aguarde... analisando seus dados..." << endl;
-    if ((idade >= IDADE_MINIMA) && (renda > REMDA_MINIMA)){
+    if ((idade >= IDADE_MINIMA) && (renda < REMDA_MINIMA)){
         cout << "\nParabéns, você pode participar do programa 'Minha C, Minha CPP'" << endl;
     } else {
         cout << "\nSentimos muito :(, você não pode participar do programa 'Minha C, Minha CPP',\nestude mais um pouco e conseguirá sua CPP." << endl;

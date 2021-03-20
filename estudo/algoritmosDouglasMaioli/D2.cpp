@@ -15,7 +15,7 @@ double calculaMedia(double n1, double n2, double n3){
 
 int isOnMedia(double mediaAluno, double mediaClasse){
     const int TOLERANCIA=2;
-    if(mediaAluno >= (mediaClasse+TOLERANCIA)){
+    if(mediaAluno > (mediaClasse+TOLERANCIA)){
         cout << "Acima da média... BD" << endl;
         return 1;
     }else if((mediaAluno < (mediaClasse + TOLERANCIA)) && (mediaAluno > (mediaClasse - TOLERANCIA) )){
