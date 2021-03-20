@@ -14,6 +14,6 @@ int main(){
     double x=0.0;
     cout << "Informe o valor de A: " << endl;
     cin >> x;
-    cout << "\nO valor resultado da função eh: " << f(x) << endl;
+    cout << "\nO valor resultado da função é: " << f(x) << endl;
     return 0;
 }
