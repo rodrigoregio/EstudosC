@@ -20,26 +20,29 @@ using namespace std;
  * pergunto pois queria passar duas matrizes a funcção, o tamanho das matrizes são informadas pelo usuario
  * Sei que tem algo a ver com os vetores dinamicamente alocados e os vetores estaticamente alocados.
  *
-void somaMatriz(int vetA[tam][tam], int vetB[tam][tam]){  //onde é tam era pra ser o tamanho informado pelo usuario.
-    int vetC[tam][tam];
-    for(int  i = 0; i < tam; i++){
-        for (int j=0; j < tam; j++){
+void somaMatriz(int vetA[tamX][tamY], int vetB[tamX][tamY]){  //onde é tam era pra ser o tamanho informado pelo usuario.
+    int vetC[tamX][tamY];
+    for(int  i = 0; i < tamX; i++){
+        for (int j=0; j < tamY; j++){
             vetC[i][j] = vetA[i][j] + vetB[i][j];
         }
     }
 }
 */
 int main(){
-    int tamanho;
-    cout << "Informe o tamanho dos vetores:" << endl;
-    cin >> tamanho;
-    int vetorUm[tamanho][tamanho];
-    int vetorDois[tamanho][tamanho];
+    int tamanhoX, tamanhoY;
+    cout << "Informe o tamanho das:" << endl;
+    cout << "Informe a quantidade de linhas" << endl;
+    cin >> tamanhoX;
+    cout << "Informe a quantidade de Colunas" << endl;
+    cin >> tamanhoY;
+    int vetorUm[tamanhoX][tamanhoY];
+    int vetorDois[tamanhoX][tamanhoY];
     
     /************************************Recebendo Matriz 1******************************************************/
     cout << "Matriz A: " << endl;
-    for(int i=0;i<tamanho;i++){
-        for(int j=0;j<tamanho;j++){
+    for(int i=0;i<tamanhoX;i++){
+        for(int j=0;j<tamanhoY;j++){
             cout << "Informe o elemento da linha " << (i + 1) << " coluna " << (j + 1) << ":" << endl;
             cin >> vetorUm[i][j];
         }
@@ -48,8 +51,8 @@ int main(){
     cout << endl;
     /************************************Recebendo Matriz 2******************************************************/
     cout << "Matriz B: " << endl;
-    for(int i=0;i<tamanho;i++){
-        for(int j=0;j<tamanho;j++){
+    for(int i=0;i<tamanhoX;i++){
+        for(int j=0;j<tamanhoY;j++){
             cout << "Informe o elemento da linha " << (i + 1) << " coluna " << (j + 1) << ":" << endl;
             cin >> vetorDois[i][j];
         }
@@ -58,32 +61,40 @@ int main(){
     cout << endl;
     /************************************Exibindo Matriz 1*******************************************************/
     cout << "Matriz A: " << endl;
-    for(int i = 0; i < tamanho; i++){
-        for(int j=0; j<tamanho;j++){
-            cout << vetorUm[i][j] << " ";
+    for(int i = 0; i < tamanhoX; i++){
+        for(int j=0; j<tamanhoY;j++){
+            if(vetorUm[i][j] < 10){
+                cout << "0" << vetorUm[i][j] << " ";
+            }else{
+                cout  << vetorUm[i][j] << " ";
+            }
         }
         cout << endl;
     }
     /************************************Exibindo Matriz 2*******************************************************/
     cout << "Matriz B: " << endl;
-    for(int i = 0; i < tamanho; i++){
-        for(int j=0; j<tamanho;j++){
-            cout << vetorDois[i][j] << " ";
+    for(int i = 0; i < tamanhoX; i++){
+        for(int j = 0; j < tamanhoY; j++){
+            if(vetorDois[i][j] < 10){
+                cout << "0" << vetorDois[i][j] << " ";
+            }else{
+                cout  << vetorDois[i][j] << " ";
+            }
         }
         cout << endl;
     }
 
     /************************************Calculando Matriz 3******************************************************/
-    int vetC[tamanho][tamanho];
-    for(int  i = 0; i < tamanho; i++){
-        for (int j=0; j < tamanho; j++){
+    int vetC[tamanhoX][tamanhoY];
+    for(int  i = 0; i < tamanhoX; i++){
+        for (int j=0; j < tamanhoY; j++){
             vetC[i][j] = vetorUm[i][j] + vetorDois[i][j]; 
         }
     }
     /************************************Exibindo Matriz 3*******************************************************/
         cout << "Matriz C: " << endl;
-    for(int i = 0; i < tamanho; i++){
-        for(int j=0; j<tamanho;j++){
+    for(int i = 0; i < tamanhoX; i++){
+        for(int j = 0; j < tamanhoY; j++){
             if(vetC[i][j] < 10){
                 cout << "0" << vetC[i][j] << " ";
             }else{
