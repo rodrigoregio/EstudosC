@@ -8,7 +8,7 @@
 
 #include <iostream>
 using namespace std;
-/**
+/*
  * Função que calcula a soma de matrizes com dimensão X e Y
  * param vetA Um vetor chamado vetA
  * param vetB Outro vetor chamado vetB
@@ -16,12 +16,14 @@ using namespace std;
  * param tamanhoY quantidade de colunas que o vetor C, e os outros informados antriormente, possuirá
  * return vetC Vetor criado com a soma dos itens dos vetores A e B
  * 
- * Pergunta ao professor Douglas Maioli, teria como fazer algo como isto??
- * 
-void somaMatriz(int vetA[tam][tam], int vetB[tam][tam]){  onde é tamanho era pra ser o tamanho informado pelo usuario.
-    int vetC[][];
-    for(int  i = 0; i < tamanho; i++){
-        for (int j=0; j < tamanho; j++){
+ * Pergunta a algum professor, porque a impossibilidade de fazer essa função na linha vinte e um em C++?
+ * pergunto pois queria passar duas matrizes a funcção, o tamanho das matrizes são informadas pelo usuario
+ * Sei que tem algo a ver com os vetores dinamicamente alocados e os vetores estaticamente alocados.
+ *
+void somaMatriz(int vetA[tam][tam], int vetB[tam][tam]){  //onde é tam era pra ser o tamanho informado pelo usuario.
+    int vetC[tam][tam];
+    for(int  i = 0; i < tam; i++){
+        for (int j=0; j < tam; j++){
             vetC[i][j] = vetA[i][j] + vetB[i][j];
         }
     }
