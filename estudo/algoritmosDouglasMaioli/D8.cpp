@@ -10,7 +10,7 @@ using namespace std;
 
 void mostraVetor(int *vetor, int tam){
     cout << endl;
-    cout << "[ " << vetor[0];
+    cout << "[" << vetor[0];
     for(int i=1; i<tam;i++){
         cout << ", " << vetor[i];
     }
@@ -32,10 +32,10 @@ int main(){
             }
         }
         mostraVetor(vetor, tamanho);
+        delete [] vetor;
         cout << "Informe o tamanho do vetor:" << endl;
         cin >> tamanho;
     }while(tamanho > 0);
     cout << "Foi informado um tamanho 0, o programa será encerrado!!\nAté mais :)" <<endl;
     return tamanho;
 }
-
