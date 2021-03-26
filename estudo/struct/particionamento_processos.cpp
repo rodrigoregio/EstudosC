@@ -3,15 +3,16 @@
 using namespace std;
 typedef struct{
     unsigned int bv;
-    char processo[10];
+    char processo;
 } particao;
-particao RAM[10];
 
 // inicializa partições
-void inicializaParticoes(){
+void inicializaParticoes(particao RAM[10]){
     for(int i=0;i<10;i++){
         RAM[i].bv=0;
+        RAM[i].processo=' ';
     }
+    cout << "Partições inicializadas!" << endl;
 }
 
 // ler partições
@@ -26,6 +27,7 @@ void lerParticao(particao RAM[10]){
 void eliminarProcessos(particao RAM[10], int posicao){
     if(RAM[posicao].bv == 1){
         RAM[posicao-1].bv=0;
+        RAM[posicao-1].processo=' ';
         cout << "A partição [" << posicao << "] foi liberada!" << endl;
     }else{
         cout << "A posição informada já está livre!!" << endl;
@@ -42,13 +44,39 @@ void alocaVazias(particao RAM[10]){
         }else{
             cout << "Ainda não encontrei uma partição vazia, estou procurando!" << endl;
         }
-        cout << "Acabaram as partições vazias!! para esvaziar uma partição elimine um processo." << endl;
     }
+    cout << "Acabaram as partições vazias!! para esvaziar uma partição elimine um processo." << endl;
 }
 int main(){
+    particao processosMemoria[10];
     int cont=1;
     do{
         //Todo: Implementar o codigo da função principal...
+        cout << "O que deseja fazer?\n" <<
+            "1 - inicializar as partiçoes\n" <<
+            "2 - alocar processos nas partições\n" <<
+            "3 - ler processos alocados nas partições\n" <<
+            "4 - eliminar processos alocados nas partições\n" <<
+            "0 - sair do programa" << endl;
+        cin >> cont;
+        if(cont ==1){
+            inicializaParticoes(processosMemoria);
+        }
+        if(cont == 2){
+            alocaVazias(processosMemoria);
+        }
+        if(cont == 3){
+            cout << endl;
+            lerParticao(processosMemoria);
+            cout << endl;
+        }
+        if(cont == 4){
+            int posicao;
+            cout << "Informe o processo que irá ser encerrado:" << endl;
+            cin >> posicao;
+            eliminarProcessos(processosMemoria,posicao);
+        }
     } while (cont>0);
-    
+    cout << "Você escolheu 0, estou encerrando o sistema..." << endl;
+
 }
