@@ -33,5 +33,4 @@ void Carro::print()const{
 
 //Método construtor
 Carro::Carro(int p,int r,float q):portas(p),rodas(r),quilometragem(q){
-
 }
