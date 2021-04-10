@@ -17,7 +17,7 @@ bool Fila::estaVazia() const{
 bool Fila::estaCheia() const{
     return ((fim - inicio) == CAPACIDADE);
 }
-void Fila::insere(TipoItem item){
+void Fila::insereItem(TipoItem item){
     if(!estaCheia()){
         estrutura[fim % CAPACIDADE]=item;
         fim++;
@@ -25,10 +25,10 @@ void Fila::insere(TipoItem item){
         throw "A fila está cheia!";
     }
 }
-TipoItem Fila::remove(){
+TipoItem Fila::removeItem(){
     if(!estaVazia()){
         inicio++;
-        return estrutura[(inicio-1)%CAPACIDADE];
+        return estrutura[(inicio-1) % CAPACIDADE];
     }else{
         throw "A fila está vazia!";
     }

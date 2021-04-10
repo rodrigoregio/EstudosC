@@ -9,25 +9,33 @@ char letraFila;
 
 void insere(){
     cout << "Entre com uma string e pressione Enter." << endl;
-    cin.get(letra);
-    while(letra != '\n' and !fila.estaCheia()){
-        fila.insere(letra);
-        cin.get(letra);
+    char *letras=new char[10];
+    cin >> letras;
+    //cin.get(letras);
+    int i=0;
+    while(letras[i] != '\n' and !fila.estaCheia()){
+        fila.insereItem(letras[i]);
+        //cin.get(letra[i]);
+        i++;
     }
+    cout << "Inseridos com sucesso!" << endl;
 }
 void remove(){
     int quantidade=0;
     cout << "Informe quantos itens quer remover:" << endl;
     cin >> quantidade;
     for(int i=0;i<quantidade;i++){
-        letraFila=fila.remove();
+        letraFila=fila.removeItem();
         cout << letraFila;
     }
     cout << endl;
+    cout << "Itens da fila: " << fila.itensNaFila() << endl;
 }
-
+void impressao(){
+    fila.imprime();
+}
 int main(){
-    int resp=0;
+    int resp=1;
     while(resp > 0){
         cout<<"O que deseja fazer??\n1 - Inserir letras\n2 - remover letras\n3 - Sair" << endl;
         cin >> resp;
@@ -38,8 +46,11 @@ int main(){
             case 2:
                 remove();
                 break;
+            case 3:
+                impressao();
+                break;
             default:
-                resp=99;
+                resp=0;
         }
     }
 }

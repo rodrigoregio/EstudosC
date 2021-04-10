@@ -9,8 +9,8 @@ class Fila{
         void imprime() const;
         int itensNaFila() const;
 
-        void insere(TipoItem);
-        TipoItem remove();
+        void insereItem(TipoItem);
+        TipoItem removeItem();
     private:
         int inicio;
         int fim;
